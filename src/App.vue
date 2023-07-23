@@ -1,6 +1,6 @@
 <template>
   <header>
-    <p>Hello {{name}}</p>
+    <p>Hello {{nickname}}</p>
   </header>
 
   <main>
@@ -10,16 +10,14 @@
 </template>
 
 <script lang="ts">
-import { onMounted, onUnmounted } from 'vue'
-/** 
- * setup 不用导出，组件不用注册
- */
+import { onMounted, onUnmounted, ref, watch, watchEffect } from 'vue'
+
 // import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
 export default {
+  name: 'First Vue3',
   data(){
     return{
-      name: 'Vue 3',
+      nickname: 'Vue 3',
       number: 'First',
       showNum: 0
     }
@@ -29,7 +27,16 @@ export default {
   },
   // Composition API Enter
   setup (){
+    let watchObj = ref({
+      name: 'watch body',
+      age: 20
+    })
+    watch(watchObj, (newValue, oldValue) => {
 
+    }, {deep: true});
+    watchEffect(() => {
+      watchObj.value;
+    })
     onMounted(() => {
 
     });
