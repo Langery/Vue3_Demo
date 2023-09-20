@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { onMounted, onUnmounted, reactive, ref, watch, watchEffect } from 'vue'
+import { onMounted, onUnmounted, reactive, toRefs, ref, watch, watchEffect } from 'vue'
 import MainPage from './component/MainPage.vue';
 
 // import HelloWorld from './components/HelloWorld.vue'
@@ -32,7 +32,7 @@ export default {
 
   },
   // Composition API Enter
-  setup (){
+  setup (props, context){
     let person = reactive({
       name: 'react body',
       age: 18
@@ -41,16 +41,30 @@ export default {
       name: 'watch body',
       age: 20
     })
+
+    let { name } = toRefs(person);
+    name.value = "new People";
+    /**
+     * person: {
+     *  name: 'new People',
+     *  age: 18
+     * }
+     */
+
     watch(watchObj, (newValue, oldValue) => {
 
     }, {deep: true});
+
     watchEffect(() => {
       watchObj.value;
     })
+
+    // 生命周期钩子 组件挂载之后调用
     onMounted(() => {
 
     });
 
+    // 组件卸载之后
     onUnmounted(() => {
 
     })
