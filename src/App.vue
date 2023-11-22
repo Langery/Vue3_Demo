@@ -3,6 +3,7 @@
     <p>Hello {{nickname}}</p>
   </header>
 
+  <demo-component></demo-component>
   <main>
     <p>This is the {{ number }} Page</p>
     <p>The first number is {{showNum}}</p>
@@ -14,12 +15,14 @@
 <script lang="ts">
 import { onMounted, onUnmounted, reactive, ref, watch, watchEffect } from 'vue'
 import MainPage from './component/MainPage.vue';
+import DemoComponent from './component/DemoComponent.vue';
 
 // import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'First Vue3',
   components: {
-    MainPage
+    MainPage,
+    DemoComponent
   },
   data(){
     return{
