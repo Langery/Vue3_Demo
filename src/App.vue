@@ -3,7 +3,8 @@
     <p>Hello {{nickname}}</p>
   </header>
 
-  <!-- <main> -->
+  <demo-component></demo-component>
+  <main>
     <p>This is the {{ number }} Page</p>
     <p>The first number is {{showNum}}</p>
     <p>The reactive name is {{person.name}}, and age is {{person.age}}</p>
@@ -12,14 +13,16 @@
 </template>
 
 <script lang="ts">
-import { onMounted, onUnmounted, reactive, toRefs, ref, watch, watchEffect } from 'vue'
+import { onMounted, onUnmounted, reactive, ref, watch, watchEffect } from 'vue'
 import MainPage from './component/MainPage.vue';
+import DemoComponent from './component/DemoComponent.vue';
 
 // import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'First Vue3',
   components: {
-    MainPage
+    MainPage,
+    DemoComponent
   },
   data(){
     return{
@@ -32,7 +35,7 @@ export default {
 
   },
   // Composition API Enter
-  setup (props, context){
+  setup (){
     let person = reactive({
       name: 'react body',
       age: 18
@@ -41,30 +44,16 @@ export default {
       name: 'watch body',
       age: 20
     })
-
-    let { name } = toRefs(person);
-    name.value = "new People";
-    /**
-     * person: {
-     *  name: 'new People',
-     *  age: 18
-     * }
-     */
-
     watch(watchObj, (newValue, oldValue) => {
 
     }, {deep: true});
-
     watchEffect(() => {
       watchObj.value;
     })
-
-    // 生命周期钩子 组件挂载之后调用
     onMounted(() => {
 
     });
 
-    // 组件卸载之后
     onUnmounted(() => {
 
     })
