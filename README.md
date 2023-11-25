@@ -9,4 +9,5 @@
 
 ### Link（笔记）
 
-1. [vue3.0新特性](https://blog.csdn.net/weixin_36774307/article/details/127603127)
+1. [vue3.0 新特性](https://blog.csdn.net/weixin_36774307/article/details/127603127)
+2. [Vue3.0 API 参考](https://cn.vuejs.org/api/)

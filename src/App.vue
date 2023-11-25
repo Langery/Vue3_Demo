@@ -9,7 +9,7 @@
     <p>The first number is {{showNum}}</p>
     <p>The reactive name is {{person.name}}, and age is {{person.age}}</p>
     <main-page></main-page>
-  <!-- </main> -->
+  </main>
 </template>
 
 <script lang="ts">
