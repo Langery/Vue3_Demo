@@ -3,12 +3,6 @@
     This is main page.
     <p>This is {{mainObj.name}}</p>
   </div>
-  <!-- 传送门 -->
-  <Teleport to="body">
-    <div>
-      
-    </div>
-  </Teleport>
   <!-- <Fragment>
 
   </Fragment> -->

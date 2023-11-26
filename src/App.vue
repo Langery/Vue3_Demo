@@ -3,13 +3,14 @@
     <p>Hello {{nickname}}</p>
   </header>
 
-  <demo-component></demo-component>
   <main>
     <p>This is the {{ number }} Page</p>
     <p>The first number is {{showNum}}</p>
     <p>The reactive name is {{person.name}}, and age is {{person.age}}</p>
     <main-page></main-page>
   </main>
+
+  <demo-component></demo-component>
 </template>
 
 <script lang="ts">
