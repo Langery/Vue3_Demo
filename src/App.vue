@@ -11,18 +11,22 @@
   </main>
 
   <demo-component></demo-component>
+
+  <vuex-component></vuex-component>
 </template>
 
 <script>
 import { onMounted, onUnmounted, reactive, ref, watch, watchEffect } from 'vue'
 import MainPage from './component/MainPage.vue';
 import DemoComponent from './component/DemoComponent.vue';
+import VuexComponent from './component/vuex.vue'
 
 export default {
   name: 'First Vue3',
   components: {
     MainPage,
-    DemoComponent
+    DemoComponent,
+    VuexComponent
   },
   data(){
     return{
@@ -32,6 +36,12 @@ export default {
     }
   },
   computed: {
+
+  },
+  mounted(){
+    
+  },
+  methods: {
 
   },
   // Composition API Enter

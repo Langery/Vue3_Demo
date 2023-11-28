@@ -33,7 +33,7 @@ export default {
   data (){
     return {
       count: 0,
-      open: Boolean
+      open: false
     }
   }
 }

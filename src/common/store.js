@@ -1,21 +1,27 @@
-import { reactive, ref } from "vue";
+// import { reactive, ref } from "vue";
+import { createStore } from "vuex";
 
-// 全局模式
-const countActive = reactive({
-  count: 0
-})
-
-const store = ({
-  state: countActive,
+const store = createStore({
+  state(){
+    return {
+      count: 0
+    }
+  },
   getters: {
 
   },
   mutations: {
-
+    increment(state) {
+      state.count++
+    }
   },
   actions: {
 
+  },
+  modules: {
+    
   }
 })
+
 
 export default store;

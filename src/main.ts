@@ -8,7 +8,10 @@ import pinia from './common/pinia.ts';
 
 const app = createApp(App)
 
-app.use(router).use(store).use({pinia}).mount('#app');
+app.use(store);
+
+app.use(router).use({pinia}).mount('#app');
+
 
 app.config.errorHandler = (err, instance, info) => {
 
