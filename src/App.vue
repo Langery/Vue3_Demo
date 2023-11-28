@@ -13,12 +13,11 @@
   <demo-component></demo-component>
 </template>
 
-<script lang="ts">
+<script>
 import { onMounted, onUnmounted, reactive, ref, watch, watchEffect } from 'vue'
 import MainPage from './component/MainPage.vue';
 import DemoComponent from './component/DemoComponent.vue';
 
-// import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'First Vue3',
   components: {

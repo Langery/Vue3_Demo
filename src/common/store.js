@@ -1,14 +1,21 @@
+import { reactive, ref } from "vue";
+
+// 全局模式
+const countActive = reactive({
+  count: 0
+})
+
 const store = ({
-  state: {
-    count: 0
-  },
+  state: countActive,
   getters: {
 
   },
   mutations: {
 
   },
-  actions: {}
+  actions: {
+
+  }
 })
 
 export default store;

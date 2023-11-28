@@ -6,6 +6,12 @@ import router from './common/router.js';
 import store from './common/store.js';
 import pinia from './common/pinia.ts';
 
-createApp(App).use(router).use(store).use({pinia}).mount('#app');
+const app = createApp(App)
 
-export default App;
+app.use(router).use(store).use({pinia}).mount('#app');
+
+app.config.errorHandler = (err, instance, info) => {
+
+}
+
+export default app;
