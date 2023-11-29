@@ -1,12 +1,19 @@
 <template>
   <div>
     {{ countAlias }} <br>
-    {{ countPlusLocalState }}
+    {{ countPlusLocalState }} <br>
+
+    Completed Todos: {{ doneTodosCount }} <br>
+
+    {{ count }}
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+    {{ add }}
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'vuex',
@@ -20,11 +27,31 @@ export default {
       return this.localCount
     },
     ...mapState({
+      count: 'count',
       countAlias: 'count',
       countPlusLocalState (state) {
         return state.count + this.localCount
       }
-    })
+    }),
+    ...mapGetters([
+      'doneTodos', 'doneTodosCount', 'getTodoById'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'increment', 'incrementBy', 'decrement'     
+    ]),
+    increment () {
+      this.$store.dispatch('incrementAsync');
+    },
+    decrement () {
+      this.$store.commit('decrement');
+    },
+    testAction () {
+      this.$store.dispatch('actionA').then(() => {
+
+      })
+    }
   },
   mounted(){
 

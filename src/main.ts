@@ -3,7 +3,7 @@ import './style/main.css'
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './common/router.js';
-import store from './common/store.js';
+import store from './store';
 import pinia from './common/pinia.ts';
 
 const app = createApp(App)
