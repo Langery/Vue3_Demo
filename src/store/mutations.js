@@ -1,6 +1,6 @@
 import * as types from './mutation-types';
 
-const mutation = {
+const mutations = {
   [types.INCREMENT] (state) {
     state = state.count++
   },
@@ -12,4 +12,4 @@ const mutation = {
   }
 }
 
-export default mutation;
+export default mutations;

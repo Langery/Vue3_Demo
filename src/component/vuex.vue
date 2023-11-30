@@ -16,7 +16,7 @@
 import { mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
-  name: 'vuex',
+  name: 'vuex component',
   data(){
     return {
       localCount: 5
@@ -38,14 +38,15 @@ export default {
     ])
   },
   methods: {
-    ...mapMutations([
-      'increment', 'incrementBy', 'decrement'     
-    ]),
+    ...mapMutations({
+      increment: 'INCREMENT',
+      decrement: 'DECREMENT'
+    }),
     increment () {
       this.$store.dispatch('incrementAsync');
     },
     decrement () {
-      this.$store.commit('decrement');
+      this.$store.commit('DECREMENT');
     },
     testAction () {
       this.$store.dispatch('actionA').then(() => {
