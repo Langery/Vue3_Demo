@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory, createMemoryHistory } from "vue-router";
 
 import Home from '../App.vue';
 
