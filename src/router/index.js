@@ -5,7 +5,11 @@ import Home from '../App.vue';
 
 const routes = [
   {
-    '/': Home
+    path: '/',
+    name: 'Home',
+    component: Home,
+    children: {
+    }
   }
 ]
 
